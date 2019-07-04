@@ -2,8 +2,13 @@ package com.ecut.repositories;
 
 import com.ecut.generated.tables.pojos.Author;
 import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import org.jooq.impl.DSL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import static com.ecut.generated.tables.Author.AUTHOR;
 
@@ -15,9 +20,6 @@ import static com.ecut.generated.tables.Author.AUTHOR;
 @Repository
 public class AuthorRepository {
 
-    @Autowired
-    private DSLContext dsl;
-
     /**
      * 根据ID获取作者信息
      *
@@ -25,7 +27,18 @@ public class AuthorRepository {
      * @return 作者信息
      */
     public Author findById(int id) {
-        return dsl.select().from(AUTHOR).where(AUTHOR.ID.eq(id)).fetchOptionalInto(Author.class).orElse(null);
+        Author author = new Author();
+        String userName = "root";
+        String password = "";
+        String url = "jdbc:mysql://localhost:3306/library";
+        try (Connection conn = DriverManager.getConnection(url, userName, password)) {
+            System.out.println("数据库连接成功！");
+             DSLContext dsl = DSL.using(conn, SQLDialect.MYSQL);
+             author =dsl.select().from(AUTHOR).where(AUTHOR.ID.eq(id)).fetchOptionalInto(Author.class).orElse(null);
+        }catch (Exception e){
+            System.out.println("数据库连接异常 ！");
+        }
+        return author;
     }
 
 }

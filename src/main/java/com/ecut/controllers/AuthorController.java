@@ -1,6 +1,6 @@
 package com.ecut.controllers;
 
-import com.ecut.generated.tables.Author;
+import com.ecut.generated.tables.pojos.Author;
 import com.ecut.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

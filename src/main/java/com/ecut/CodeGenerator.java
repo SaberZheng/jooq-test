@@ -7,7 +7,6 @@ import org.jooq.codegen.GenerationTool;
  * @date 2019-07-04 16:27
  * @description: 代码生成器主类
  */
-
 public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {

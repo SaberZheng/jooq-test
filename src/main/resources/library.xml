@@ -16,6 +16,9 @@
              Defaults to org.jooq.codegen.JavaGenerator -->
         <name>org.jooq.codegen.JavaGenerator</name>
 
+        <generate>
+            <pojos>true</pojos>
+        </generate>
         <database>
             <!-- 数据库类型。这里的格式是:
                  org.jooq.meta.[database].[database]Database -->

@@ -28,7 +28,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements Record3<Integer, String, String> {
 
-    private static final long serialVersionUID = 2136575576;
+    private static final long serialVersionUID = 665194958;
 
     /**
      * Setter for <code>library.author.id</code>.
@@ -45,30 +45,30 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     }
 
     /**
-     * Setter for <code>library.author.first_name</code>.
-     */
-    public void setFirstName(String value) {
-        set(1, value);
-    }
-
-    /**
-     * Getter for <code>library.author.first_name</code>.
-     */
-    public String getFirstName() {
-        return (String) get(1);
-    }
-
-    /**
      * Setter for <code>library.author.last_name</code>.
      */
     public void setLastName(String value) {
-        set(2, value);
+        set(1, value);
     }
 
     /**
      * Getter for <code>library.author.last_name</code>.
      */
     public String getLastName() {
+        return (String) get(1);
+    }
+
+    /**
+     * Setter for <code>library.author.first_name</code>.
+     */
+    public void setFirstName(String value) {
+        set(2, value);
+    }
+
+    /**
+     * Getter for <code>library.author.first_name</code>.
+     */
+    public String getFirstName() {
         return (String) get(2);
     }
 
@@ -117,7 +117,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public Field<String> field2() {
-        return Author.AUTHOR.FIRST_NAME;
+        return Author.AUTHOR.LAST_NAME;
     }
 
     /**
@@ -125,7 +125,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public Field<String> field3() {
-        return Author.AUTHOR.LAST_NAME;
+        return Author.AUTHOR.FIRST_NAME;
     }
 
     /**
@@ -141,7 +141,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public String component2() {
-        return getFirstName();
+        return getLastName();
     }
 
     /**
@@ -149,7 +149,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public String component3() {
-        return getLastName();
+        return getFirstName();
     }
 
     /**
@@ -165,7 +165,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public String value2() {
-        return getFirstName();
+        return getLastName();
     }
 
     /**
@@ -173,7 +173,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public String value3() {
-        return getLastName();
+        return getFirstName();
     }
 
     /**
@@ -190,7 +190,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public AuthorRecord value2(String value) {
-        setFirstName(value);
+        setLastName(value);
         return this;
     }
 
@@ -199,7 +199,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
      */
     @Override
     public AuthorRecord value3(String value) {
-        setLastName(value);
+        setFirstName(value);
         return this;
     }
 
@@ -228,11 +228,11 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     /**
      * Create a detached, initialised AuthorRecord
      */
-    public AuthorRecord(Integer id, String firstName, String lastName) {
+    public AuthorRecord(Integer id, String lastName, String firstName) {
         super(Author.AUTHOR);
 
         set(0, id);
-        set(1, firstName);
-        set(2, lastName);
+        set(1, lastName);
+        set(2, firstName);
     }
 }

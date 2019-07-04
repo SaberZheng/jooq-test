@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.11.0.xsd">
+    <!-- 数据库连接配置 -->
+    <jdbc>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/library</url>
+        <user>root</user>
+        <password></password>
+    </jdbc>
+
+    <generator>
+        <!--  默认代码生成器。您可以覆盖此项，以生成您自己的代码样式。
+              支持的生成器:
+             - org.jooq.codegen.JavaGenerator
+             - org.jooq.codegen.ScalaGenerator
+             Defaults to org.jooq.codegen.JavaGenerator -->
+        <name>org.jooq.codegen.JavaGenerator</name>
+
+        <database>
+            <!-- 数据库类型。这里的格式是:
+                 org.jooq.meta.[database].[database]Database -->
+            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+
+            <!-- 数据库模式（或缺席模式支持，在您的RDBMS中，这可以是要生成的所有者，用户，数据库名称-->
+            <inputSchema>library</inputSchema>
+
+            <!-- 模式生成所有元素 -->
+            <includes>.*</includes>
+
+            <!-- 模式排除元素 -->
+            <excludes></excludes>
+        </database>
+
+        <target>
+            <!-- 生成的类的目标包（在目标目录中） -->
+            <packageName>com.ecut.generated</packageName>
+
+            <!-- 生成的类的目标目录 -->
+            <directory>/Users/zhengamy/IdeaProjects/jooq-test/src/main/java</directory>
+        </target>
+    </generator>
+</configuration>

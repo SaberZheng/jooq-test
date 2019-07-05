@@ -20,6 +20,8 @@ import static com.ecut.generated.tables.Author.AUTHOR;
 @Repository
 public class AuthorRepository {
 
+    private DSLContext dsl;
+
     /**
      * 根据ID获取作者信息
      *
@@ -41,4 +43,7 @@ public class AuthorRepository {
         return author;
     }
 
+    private void connectDatabase(){
+
+    }
 }

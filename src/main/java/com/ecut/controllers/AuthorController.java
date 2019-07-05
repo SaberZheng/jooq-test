@@ -17,11 +17,14 @@ public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/findAuthorById")
     public ModelAndView findAuthorById(int id) {
-        ModelAndView model = new ModelAndView("/test");
+        ModelAndView model = new ModelAndView("/query");
         Author author = authorService.findAuthorById(id);
         model.addObject("author", author);
         return model;
     }
+
+
+
 }

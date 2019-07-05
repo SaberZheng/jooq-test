@@ -18,6 +18,7 @@
 
         <generate>
             <pojos>true</pojos>
+            <daos>true</daos>
         </generate>
         <database>
             <!-- 数据库类型。这里的格式是:

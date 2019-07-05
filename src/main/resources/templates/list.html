@@ -13,7 +13,7 @@
 <script th:src="@{jquery-3.3.1.min.js}" type="text/javascript"></script>
 <body>
 <!--通过${not #lists.isEmpty(people)} 来判断数据。Thymeleaf 支持> 、<、>=、<=、  == 、!= 作为比较条件,同时也支持将Spring EL表达式语言用于条件中-->
-<div th:if="${not #lists.isEmpty(people)}">
+<div th:if="${not #lists.isEmpty(authors)}">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">列表</h3>
@@ -21,9 +21,10 @@
         <div class="panel-body">
             <ul class="list-group">
                 <!--通过th:each 来迭代数据-->
-                <li class="list-grop-item" th:each="person:${people}">
-                    <span th:text="${person.name}"></span>
-                    <span th:text="${person.age}"></span>
+                <li class="list-grop-item" th:each="author:${authors}">
+                    <span th:text="'ID：'+${author.id}"></span>
+                    <span th:text="'姓名：'+${author.lastName}"></span>
+                    <span th:text="${author.firstName}"></span>
                 </li>
             </ul>
         </div>

@@ -15,10 +15,8 @@
              - org.jooq.codegen.ScalaGenerator
              Defaults to org.jooq.codegen.JavaGenerator -->
         <name>org.jooq.codegen.JavaGenerator</name>
-
         <generate>
             <pojos>true</pojos>
-            <daos>true</daos>
         </generate>
         <database>
             <!-- 数据库类型。这里的格式是:
@@ -33,6 +31,16 @@
 
             <!-- 模式排除元素 -->
             <excludes></excludes>
+
+            <!--类型映射-->
+            <forcedTypes>
+                <forcedType>
+                    <name>BOOLEAN</name>
+                    <expression>deleted</expression>
+                    <types>.*</types>
+                </forcedType>
+
+            </forcedTypes>
         </database>
 
         <target>

@@ -1,10 +1,11 @@
 package com.ecut.services;
 
-import com.ecut.generated.tables.daos.AuthorDao;
 import com.ecut.generated.tables.pojos.Author;
 import com.ecut.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Amy
@@ -17,11 +18,21 @@ public class AuthorService {
     @Autowired
     private AuthorRepository authorRepository;
 
-    @Autowired
-    private AuthorDao authorDao;
-
-    public Author findAuthorById(int id){
-        return  authorRepository.findById(id);
+    public boolean insertAuthor(int id, String firstName, String lastName) {
+        return authorRepository.insert(id, firstName, lastName);
     }
+
+    public boolean delete(int id) {
+        return authorRepository.deleteById(id);
+    }
+
+    public Author findAuthorById(int id) {
+        return authorRepository.findById(id);
+    }
+
+    public List<Author> listAuthors() {
+        return authorRepository.list();
+    }
+
 
 }

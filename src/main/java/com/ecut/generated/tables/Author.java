@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Author extends TableImpl<AuthorRecord> {
 
-    private static final long serialVersionUID = -1524685241;
+    private static final long serialVersionUID = -356522142;
 
     /**
      * The reference instance of <code>library.author</code>
@@ -69,6 +69,11 @@ public class Author extends TableImpl<AuthorRecord> {
      * The column <code>library.author.first_name</code>.
      */
     public final TableField<AuthorRecord, String> FIRST_NAME = createField("first_name", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
+
+    /**
+     * The column <code>library.author.deleted</code>.
+     */
+    public final TableField<AuthorRecord, Boolean> DELETED = createField("deleted", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BOOLEAN)), this, "");
 
     /**
      * Create a <code>library.author</code> table reference

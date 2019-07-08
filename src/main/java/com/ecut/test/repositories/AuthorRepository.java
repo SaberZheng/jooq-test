@@ -1,7 +1,7 @@
 package com.ecut.test.repositories;
 
 import com.ecut.test.entitys.DataSource;
-import com.ecut.test.generated.tables.Author;
+import com.ecut.test.generated.tables.pojos.Author;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
+
+import static com.ecut.test.generated.tables.Author.AUTHOR;
 
 /**
  * @author Amy
@@ -30,13 +32,13 @@ public class AuthorRepository {
     /**
      * 添加作者
      *
-     * @param id ID
+     * @param id        ID
      * @param firstName 名
-     * @param lastName 姓
+     * @param lastName  姓
      * @return 添加结果
      */
     public boolean insert(int id, String firstName, String lastName) {
-        return dsl.insertInto(Author.AUTHOR, Author.AUTHOR.ID, Author.AUTHOR.FIRST_NAME, Author.AUTHOR.LAST_NAME, Author.AUTHOR.DELETED).values(id, firstName, lastName, false).execute() == 1;
+        return dsl.insertInto(AUTHOR, AUTHOR.ID, AUTHOR.FIRST_NAME, AUTHOR.LAST_NAME, AUTHOR.DELETED).values(id, firstName, lastName, false).execute() == 1;
     }
 
     /**
@@ -47,7 +49,7 @@ public class AuthorRepository {
      */
     public boolean deleteById(int id) {
         connectDatabase();
-        return dsl.update(Author.AUTHOR).set(Author.AUTHOR.DELETED, true).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).execute() == 1;
+        return dsl.update(AUTHOR).set(AUTHOR.DELETED, true).where(AUTHOR.ID.eq(id)).and(AUTHOR.DELETED.isFalse()).execute() == 1;
     }
 
     /**
@@ -56,9 +58,9 @@ public class AuthorRepository {
      * @param id id
      * @return 作者信息
      */
-    public com.ecut.test.generated.tables.pojos.Author findById(int id) {
+    public Author findById(int id) {
         connectDatabase();
-        return dsl.select().from(Author.AUTHOR).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).fetchOptionalInto(com.ecut.test.generated.tables.pojos.Author.class).orElse(null);
+        return dsl.select().from(AUTHOR).where(AUTHOR.ID.eq(id)).and(AUTHOR.DELETED.isFalse()).fetchOptionalInto(Author.class).orElse(null);
     }
 
     /**
@@ -66,9 +68,9 @@ public class AuthorRepository {
      *
      * @return list
      */
-    public List<com.ecut.test.generated.tables.pojos.Author> list() {
+    public List<Author> list() {
         connectDatabase();
-        return dsl.selectFrom(Author.AUTHOR).where(Author.AUTHOR.DELETED.isFalse()).fetchInto(com.ecut.test.generated.tables.pojos.Author.class);
+        return dsl.selectFrom(AUTHOR).where(AUTHOR.DELETED.isFalse()).fetchInto(Author.class);
     }
 
     private void connectDatabase() {

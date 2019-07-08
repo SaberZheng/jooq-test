@@ -5,6 +5,7 @@ import com.ecut.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
-    @RequestMapping("/addAuthor")
+    @RequestMapping(value = "/author",method = RequestMethod.POST)
     public ModelAndView addAuthor(int id, String firstName, String lastName) {
         ModelAndView model = new ModelAndView("/add");
         Boolean result  = authorService.insertAuthor(id,firstName,lastName);
@@ -28,7 +29,7 @@ public class AuthorController {
         return model;
     }
 
-    @RequestMapping("/deleteAuthor")
+    @RequestMapping(value = "/author_id",method = RequestMethod.DELETE)
     public ModelAndView deleteAuthorById(int id) {
         ModelAndView model = new ModelAndView("/add");
         Boolean result  = authorService.delete(id);
@@ -36,7 +37,7 @@ public class AuthorController {
         return model;
     }
 
-    @RequestMapping("/findAuthorById")
+    @RequestMapping(value = "/author_id" ,method = RequestMethod.GET)
     public ModelAndView findAuthorById(int id) {
         ModelAndView model = new ModelAndView("/query");
         Author author = authorService.findAuthorById(id);
@@ -45,7 +46,7 @@ public class AuthorController {
     }
 
 
-    @RequestMapping("/listAuthors")
+    @RequestMapping(value = "/authors", method = RequestMethod.GET)
     public ModelAndView list() {
         ModelAndView model = new ModelAndView("/list");
         List<Author> authors = authorService.listAuthors();

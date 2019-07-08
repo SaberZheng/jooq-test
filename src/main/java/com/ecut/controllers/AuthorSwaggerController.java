@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,7 +25,7 @@ import java.util.List;
  * paramType：参数放在哪个地方
  * header-->请求参数的获取：@RequestHeader
  * query-->请求参数的获取：@RequestParam
- * path（用于restful接口）-->请求参数的获取：@PathVariable
+ * path（用于REST ful接口）-->请求参数的获取：@PathVariable
  * body（不常用）
  * form（不常用）
  * name：参数名
@@ -44,7 +45,7 @@ public class AuthorSwaggerController {
     private AuthorService authorService;
 
     @ResponseBody
-    @RequestMapping("/addAuthor")
+    @RequestMapping(value = "/addAuthor", method = RequestMethod.POST)
     @ApiOperation(value = "增加作者", notes = "ID，名字，姓氏")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int"),
@@ -57,7 +58,7 @@ public class AuthorSwaggerController {
 
 
     @ResponseBody
-    @RequestMapping("/deleteAuthor")
+    @RequestMapping(value = "/deleteAuthor", method = RequestMethod.POST)
     @ApiOperation(value = "删除作者", notes = "根据ID删除作者")
     @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int")
     public Boolean deleteAuthorById(int id) {
@@ -65,7 +66,7 @@ public class AuthorSwaggerController {
     }
 
     @ResponseBody
-    @RequestMapping("/findAuthorById")
+    @RequestMapping(value = "/findAuthorById", method = RequestMethod.GET)
     @ApiOperation(value = "获取作者信息", notes = "根据ID获取作者信息")
     @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int")
     public Author findAuthorById(int id) {
@@ -74,7 +75,7 @@ public class AuthorSwaggerController {
 
 
     @ResponseBody
-    @RequestMapping("/listAuthors")
+    @RequestMapping(value = "/listAuthors", method = RequestMethod.GET)
     @ApiOperation(value = "获取所有作者信息", notes = "获取所有作者信息")
     public List<Author> list() {
         return authorService.listAuthors();

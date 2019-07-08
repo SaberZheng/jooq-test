@@ -1,7 +1,7 @@
 package com.ecut.test.repositories;
 
 import com.ecut.test.entitys.DataSource;
-import com.ecut.test.generated.tables.pojos.Author;
+import com.ecut.test.generated.tables.Author;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;

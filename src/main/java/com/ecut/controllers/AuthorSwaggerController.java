@@ -35,14 +35,16 @@ import java.util.List;
  * ApiModel描述一个Model的信息（一般用在请求参数无法使用@ApiImplicitParam注解进行描述的时候）
  * ApiProperty用对象接收参数时，描述对象的一个字段
  */
-@Api(value = "AuthorController 操作作者信息的controller")
+@Api(value = "AuthorSwaggerController 操作作者信息的Swagger测试controller")
 @Controller
+@RequestMapping("/testSwagger")
 public class AuthorSwaggerController {
 
     @Autowired
     private AuthorService authorService;
 
     @ResponseBody
+    @RequestMapping("/addAuthor")
     @ApiOperation(value = "增加作者", notes = "ID，名字，姓氏")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int"),
@@ -55,6 +57,7 @@ public class AuthorSwaggerController {
 
 
     @ResponseBody
+    @RequestMapping("/deleteAuthor")
     @ApiOperation(value = "删除作者", notes = "根据ID删除作者")
     @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int")
     public Boolean deleteAuthorById(int id) {
@@ -62,6 +65,7 @@ public class AuthorSwaggerController {
     }
 
     @ResponseBody
+    @RequestMapping("/findAuthorById")
     @ApiOperation(value = "获取作者信息", notes = "根据ID获取作者信息")
     @ApiImplicitParam(paramType = "query", name = "id", value = "作者ID", required = true, dataType = "int")
     public Author findAuthorById(int id) {
@@ -70,6 +74,7 @@ public class AuthorSwaggerController {
 
 
     @ResponseBody
+    @RequestMapping("/listAuthors")
     @ApiOperation(value = "获取所有作者信息", notes = "获取所有作者信息")
     public List<Author> list() {
         return authorService.listAuthors();

@@ -56,9 +56,9 @@ public class AuthorRepository {
      * @param id id
      * @return 作者信息
      */
-    public Author findById(int id) {
+    public com.ecut.test.generated.tables.pojos.Author findById(int id) {
         connectDatabase();
-        return dsl.select().from(Author.AUTHOR).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).fetchOptionalInto(Author.class).orElse(null);
+        return dsl.select().from(Author.AUTHOR).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).fetchOptionalInto(com.ecut.test.generated.tables.pojos.Author.class).orElse(null);
     }
 
     /**
@@ -66,9 +66,9 @@ public class AuthorRepository {
      *
      * @return list
      */
-    public List<Author> list() {
+    public List<com.ecut.test.generated.tables.pojos.Author> list() {
         connectDatabase();
-        return dsl.selectFrom(Author.AUTHOR).where(Author.AUTHOR.DELETED.isFalse()).fetchInto(Author.class);
+        return dsl.selectFrom(Author.AUTHOR).where(Author.AUTHOR.DELETED.isFalse()).fetchInto(com.ecut.test.generated.tables.pojos.Author.class);
     }
 
     private void connectDatabase() {

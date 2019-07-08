@@ -1,7 +1,7 @@
-package com.ecut.controllers;
+package com.ecut.test.controllers;
 
-import com.ecut.generated.tables.pojos.Author;
-import com.ecut.services.AuthorService;
+import com.ecut.test.generated.tables.pojos.Author;
+import com.ecut.test.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

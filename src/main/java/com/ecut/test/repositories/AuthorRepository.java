@@ -1,7 +1,7 @@
-package com.ecut.repositories;
+package com.ecut.test.repositories;
 
-import com.ecut.entitys.DataSource;
-import com.ecut.generated.tables.pojos.Author;
+import com.ecut.test.entitys.DataSource;
+import com.ecut.test.generated.tables.pojos.Author;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
-
-import static com.ecut.generated.tables.Author.AUTHOR;
 
 /**
  * @author Amy
@@ -38,7 +36,7 @@ public class AuthorRepository {
      * @return 添加结果
      */
     public boolean insert(int id, String firstName, String lastName) {
-        return dsl.insertInto(AUTHOR, AUTHOR.ID, AUTHOR.FIRST_NAME, AUTHOR.LAST_NAME, AUTHOR.DELETED).values(id, firstName, lastName, false).execute() == 1;
+        return dsl.insertInto(Author.AUTHOR, Author.AUTHOR.ID, Author.AUTHOR.FIRST_NAME, Author.AUTHOR.LAST_NAME, Author.AUTHOR.DELETED).values(id, firstName, lastName, false).execute() == 1;
     }
 
     /**
@@ -49,7 +47,7 @@ public class AuthorRepository {
      */
     public boolean deleteById(int id) {
         connectDatabase();
-        return dsl.update(AUTHOR).set(AUTHOR.DELETED, true).where(AUTHOR.ID.eq(id)).and(AUTHOR.DELETED.isFalse()).execute() == 1;
+        return dsl.update(Author.AUTHOR).set(Author.AUTHOR.DELETED, true).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).execute() == 1;
     }
 
     /**
@@ -60,7 +58,7 @@ public class AuthorRepository {
      */
     public Author findById(int id) {
         connectDatabase();
-        return dsl.select().from(AUTHOR).where(AUTHOR.ID.eq(id)).and(AUTHOR.DELETED.isFalse()).fetchOptionalInto(Author.class).orElse(null);
+        return dsl.select().from(Author.AUTHOR).where(Author.AUTHOR.ID.eq(id)).and(Author.AUTHOR.DELETED.isFalse()).fetchOptionalInto(Author.class).orElse(null);
     }
 
     /**
@@ -70,7 +68,7 @@ public class AuthorRepository {
      */
     public List<Author> list() {
         connectDatabase();
-        return dsl.selectFrom(AUTHOR).where(AUTHOR.DELETED.isFalse()).fetchInto(Author.class);
+        return dsl.selectFrom(Author.AUTHOR).where(Author.AUTHOR.DELETED.isFalse()).fetchInto(Author.class);
     }
 
     private void connectDatabase() {

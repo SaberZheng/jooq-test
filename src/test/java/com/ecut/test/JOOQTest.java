@@ -1,7 +1,6 @@
-package com.ecut;
+package com.ecut.test;
 
-import static com.ecut.generated.tables.Author.AUTHOR;
-
+import com.ecut.test.generated.tables.Author;
 import org.jooq.DSLContext;
 import org.jooq.Record;
 import org.jooq.Result;
@@ -12,7 +11,7 @@ import org.junit.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class AppTest 
+public class JOOQTest
 {
     @Test
     public void test()
@@ -23,12 +22,12 @@ public class AppTest
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
             System.out.println("数据库连接成功！");
             DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
-            Result<Record> result = create.select().from(AUTHOR).fetch();
+            Result<Record> result = create.select().from(Author.AUTHOR).fetch();
             System.out.println(result);
             for (Record r : result) {
-                Integer id = r.getValue(AUTHOR.ID);
-                String firstName = r.getValue(AUTHOR.FIRST_NAME);
-                String lastName = r.getValue(AUTHOR.LAST_NAME);
+                Integer id = r.getValue(Author.AUTHOR.ID);
+                String firstName = r.getValue(Author.AUTHOR.FIRST_NAME);
+                String lastName = r.getValue(Author.AUTHOR.LAST_NAME);
                 System.out.println("ID: " + id + " first name: " + firstName + " last name: " + lastName);
             }
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.ecut.configs;
+package com.ecut.test.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

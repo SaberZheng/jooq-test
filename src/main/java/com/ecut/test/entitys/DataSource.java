@@ -1,4 +1,4 @@
-package com.ecut.entitys;
+package com.ecut.test.entitys;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;

@@ -1,7 +1,7 @@
-package com.ecut.controllers;
+package com.ecut.test.controllers;
 
-import com.ecut.generated.tables.pojos.Author;
-import com.ecut.services.AuthorService;
+import com.ecut.test.generated.tables.pojos.Author;
+import com.ecut.test.services.AuthorService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 

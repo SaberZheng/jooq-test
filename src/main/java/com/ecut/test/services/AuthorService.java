@@ -1,7 +1,7 @@
-package com.ecut.services;
+package com.ecut.test.services;
 
-import com.ecut.generated.tables.pojos.Author;
-import com.ecut.repositories.AuthorRepository;
+import com.ecut.test.generated.tables.pojos.Author;
+import com.ecut.test.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.ecut;
+package com.ecut.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;

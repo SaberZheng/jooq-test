@@ -2,12 +2,8 @@ package com.ecut.test;
 
 import com.ecut.test.entitys.Repo;
 import com.ecut.test.services.GitHubService;
-import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.util.CollectionUtils;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;

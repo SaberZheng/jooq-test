@@ -1,131 +1,131 @@
 package com.ecut.test.entitys;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 /**
  * @author Amy
  * @date 2019-07-08 15:49
  * @description:
  */
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Repo {
     private int id;
-    private String nodeId;
+    private String node_id;
     private String name;
-    private String fullName;
+    private String full_name;
     private boolean privateX;
     private OwnerEntity owner;
-    private String htmlUrl;
+    private String html_url;
     private Object description;
     private boolean fork;
     private String url;
-    private String forksUrl;
-    private String keysUrl;
-    private String collaboratorsUrl;
-    private String teamsUrl;
-    private String hooksUrl;
-    private String issueEventsUrl;
-    private String eventsUrl;
-    private String assigneesUrl;
-    private String branchesUrl;
-    private String tagsUrl;
-    private String blobsUrl;
-    private String gitTagsUrl;
-    private String gitRefsUrl;
-    private String treesUrl;
-    private String statusesUrl;
-    private String languagesUrl;
-    private String stargazersUrl;
-    private String contributorsUrl;
-    private String subscribersUrl;
-    private String subscriptionUrl;
-    private String commitsUrl;
-    private String gitCommitsUrl;
-    private String commentsUrl;
-    private String issueCommentUrl;
-    private String contentsUrl;
-    private String compareUrl;
-    private String mergesUrl;
-    private String archiveUrl;
-    private String downloadsUrl;
-    private String issuesUrl;
-    private String pullsUrl;
-    private String milestonesUrl;
-    private String notificationsUrl;
-    private String labelsUrl;
-    private String releasesUrl;
-    private String deploymentsUrl;
-    private String createdAt;
-    private String updatedAt;
-    private String pushedAt;
-    private String gitUrl;
-    private String sshUrl;
-    private String cloneUrl;
-    private String svnUrl;
+    private String forks_url;
+    private String keys_url;
+    private String collaborators_url;
+    private String teams_url;
+    private String hooks_url;
+    private String issue_events_url;
+    private String events_url;
+    private String assignees_url;
+    private String branches_url;
+    private String tags_url;
+    private String blobs_url;
+    private String git_tags_url;
+    private String git_refs_url;
+    private String trees_url;
+    private String statuses_url;
+    private String languages_url;
+    private String stargazers_url;
+    private String contributors_url;
+    private String subscribers_url;
+    private String subscription_url;
+    private String commits_url;
+    private String git_commits_url;
+    private String comments_url;
+    private String issue_comment_url;
+    private String contents_url;
+    private String compare_url;
+    private String merges_url;
+    private String archive_url;
+    private String downloads_url;
+    private String issues_url;
+    private String pulls_url;
+    private String milestones_url;
+    private String notifications_url;
+    private String labels_url;
+    private String releases_url;
+    private String deployments_url;
+    private String created_at;
+    private String updated_at;
+    private String pushed_at;
+    private String git_url;
+    private String ssh_url;
+    private String clone_url;
+    private String svn_url;
     private Object homepage;
     private int size;
-    private int stargazersCount;
-    private int watchersCount;
+    private int stargazers_count;
+    private int watchers_count;
     private String language;
-    private boolean hasIssues;
-    private boolean hasProject;
-    private boolean hasDownloads;
-    private boolean hasWiki;
-    private boolean hasPages;
-    private int forksCount;
-    private Object mirrorUrl;
+    private boolean has_issues;
+    private boolean has_project;
+    private boolean has_downloads;
+    private boolean has_wiki;
+    private boolean has_pages;
+    private int forks_count;
+    private Object mirror_url;
     private boolean archived;
     private boolean disabled;
-    private int openIssuesCount;
+    private int open_issues_count;
     private int license;
     private int forks;
-    private int openIssues;
+    private int open_issues;
     private int watchers;
-    private String defaultBranch;
+    private String default_branch;
 
-    public Repo() {
-    }
-
+    @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
     private static class OwnerEntity {
         private String login;
         private int id;
-        private String avatarUrl;
-        private String gravatarId;
+        private String avatar_url;
+        private String gravatar_id;
         private String url;
-        private String htmlUrl;
-        private String followersUrl;
-        private String followingUrl;
-        private String gistsUrl;
-        private String starredUrl;
-        private String subscriptionsUrl;
-        private String organizationsUrl;
-        private String reposUrl;
-        private String eventsUrl;
-        private String receivedEventsUrl;
+        private String html_url;
+        private String followers_url;
+        private String following_url;
+        private String gists_url;
+        private String starred_url;
+        private String subscriptions_url;
+        private String organizations_url;
+        private String repos_url;
+        private String events_url;
+        private String received_events_url;
         private String type;
-        private boolean siteAdmin;
+        private boolean site_admin;
 
         @Override
         public String toString() {
             return "OwnerEntity{" +
                     "login='" + login + '\'' +
                     ", id=" + id +
-                    ", avatarUrl='" + avatarUrl + '\'' +
-                    ", gravatarId='" + gravatarId + '\'' +
+                    ", avatar_url='" + avatar_url + '\'' +
+                    ", gravatar_id='" + gravatar_id + '\'' +
                     ", url='" + url + '\'' +
-                    ", htmlUrl='" + htmlUrl + '\'' +
-                    ", followersUrl='" + followersUrl + '\'' +
-                    ", followingUrl='" + followingUrl + '\'' +
-                    ", gistsUrl='" + gistsUrl + '\'' +
-                    ", starredUrl='" + starredUrl + '\'' +
-                    ", subscriptionsUrl='" + subscriptionsUrl + '\'' +
-                    ", organizationsUrl='" + organizationsUrl + '\'' +
-                    ", reposUrl='" + reposUrl + '\'' +
-                    ", eventsUrl='" + eventsUrl + '\'' +
-                    ", receivedEventsUrl='" + receivedEventsUrl + '\'' +
+                    ", html_url='" + html_url + '\'' +
+                    ", followers_url='" + followers_url + '\'' +
+                    ", following_url='" + following_url + '\'' +
+                    ", gists_url='" + gists_url + '\'' +
+                    ", starred_url='" + starred_url + '\'' +
+                    ", subscriptions_url='" + subscriptions_url + '\'' +
+                    ", organizations_url='" + organizations_url + '\'' +
+                    ", repos_url='" + repos_url + '\'' +
+                    ", events_url='" + events_url + '\'' +
+                    ", received_events_url='" + received_events_url + '\'' +
                     ", type='" + type + '\'' +
-                    ", siteAdmin=" + siteAdmin +
+                    ", site_admin=" + site_admin +
                     '}';
         }
     }
@@ -134,262 +134,80 @@ public class Repo {
     public String toString() {
         return "Repo{" +
                 "id=" + id +
-                ", nodeId='" + nodeId + '\'' +
+                ", node_id='" + node_id + '\'' +
                 ", name='" + name + '\'' +
-                ", fullName='" + fullName + '\'' +
+                ", full_name='" + full_name + '\'' +
                 ", privateX=" + privateX +
                 ", owner=" + owner +
-                ", htmlUrl='" + htmlUrl + '\'' +
+                ", html_url='" + html_url + '\'' +
                 ", description=" + description +
                 ", fork=" + fork +
                 ", url='" + url + '\'' +
-                ", forksUrl='" + forksUrl + '\'' +
-                ", keysUrl='" + keysUrl + '\'' +
-                ", collaboratorsUrl='" + collaboratorsUrl + '\'' +
-                ", teamsUrl='" + teamsUrl + '\'' +
-                ", hooksUrl='" + hooksUrl + '\'' +
-                ", issueEventsUrl='" + issueEventsUrl + '\'' +
-                ", eventsUrl='" + eventsUrl + '\'' +
-                ", assigneesUrl='" + assigneesUrl + '\'' +
-                ", branchesUrl='" + branchesUrl + '\'' +
-                ", tagsUrl='" + tagsUrl + '\'' +
-                ", blobsUrl='" + blobsUrl + '\'' +
-                ", gitTagsUrl='" + gitTagsUrl + '\'' +
-                ", gitRefsUrl='" + gitRefsUrl + '\'' +
-                ", treesUrl='" + treesUrl + '\'' +
-                ", statusesUrl='" + statusesUrl + '\'' +
-                ", languagesUrl='" + languagesUrl + '\'' +
-                ", stargazersUrl='" + stargazersUrl + '\'' +
-                ", contributorsUrl='" + contributorsUrl + '\'' +
-                ", subscribersUrl='" + subscribersUrl + '\'' +
-                ", subscriptionUrl='" + subscriptionUrl + '\'' +
-                ", commitsUrl='" + commitsUrl + '\'' +
-                ", gitCommitsUrl='" + gitCommitsUrl + '\'' +
-                ", commentsUrl='" + commentsUrl + '\'' +
-                ", issueCommentUrl='" + issueCommentUrl + '\'' +
-                ", contentsUrl='" + contentsUrl + '\'' +
-                ", compareUrl='" + compareUrl + '\'' +
-                ", mergesUrl='" + mergesUrl + '\'' +
-                ", archiveUrl='" + archiveUrl + '\'' +
-                ", downloadsUrl='" + downloadsUrl + '\'' +
-                ", issuesUrl='" + issuesUrl + '\'' +
-                ", pullsUrl='" + pullsUrl + '\'' +
-                ", milestonesUrl='" + milestonesUrl + '\'' +
-                ", notificationsUrl='" + notificationsUrl + '\'' +
-                ", labelsUrl='" + labelsUrl + '\'' +
-                ", releasesUrl='" + releasesUrl + '\'' +
-                ", deploymentsUrl='" + deploymentsUrl + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", pushedAt='" + pushedAt + '\'' +
-                ", gitUrl='" + gitUrl + '\'' +
-                ", sshUrl='" + sshUrl + '\'' +
-                ", cloneUrl='" + cloneUrl + '\'' +
-                ", svnUrl='" + svnUrl + '\'' +
+                ", forks_url='" + forks_url + '\'' +
+                ", keys_url='" + keys_url + '\'' +
+                ", collaborators_url='" + collaborators_url + '\'' +
+                ", teams_url='" + teams_url + '\'' +
+                ", hooks_url='" + hooks_url + '\'' +
+                ", issue_events_url='" + issue_events_url + '\'' +
+                ", events_url='" + events_url + '\'' +
+                ", assignees_url='" + assignees_url + '\'' +
+                ", branches_url='" + branches_url + '\'' +
+                ", tags_url='" + tags_url + '\'' +
+                ", blobs_url='" + blobs_url + '\'' +
+                ", git_tags_url='" + git_tags_url + '\'' +
+                ", git_refs_url='" + git_refs_url + '\'' +
+                ", trees_url='" + trees_url + '\'' +
+                ", statuses_url='" + statuses_url + '\'' +
+                ", languages_url='" + languages_url + '\'' +
+                ", stargazers_url='" + stargazers_url + '\'' +
+                ", contributors_url='" + contributors_url + '\'' +
+                ", subscribers_url='" + subscribers_url + '\'' +
+                ", subscription_url='" + subscription_url + '\'' +
+                ", commits_url='" + commits_url + '\'' +
+                ", git_commits_url='" + git_commits_url + '\'' +
+                ", comments_url='" + comments_url + '\'' +
+                ", issue_comment_url='" + issue_comment_url + '\'' +
+                ", contents_url='" + contents_url + '\'' +
+                ", compare_url='" + compare_url + '\'' +
+                ", merges_url='" + merges_url + '\'' +
+                ", archive_url='" + archive_url + '\'' +
+                ", downloads_url='" + downloads_url + '\'' +
+                ", issues_url='" + issues_url + '\'' +
+                ", pulls_url='" + pulls_url + '\'' +
+                ", milestones_url='" + milestones_url + '\'' +
+                ", notifications_url='" + notifications_url + '\'' +
+                ", labels_url='" + labels_url + '\'' +
+                ", releases_url='" + releases_url + '\'' +
+                ", deployments_url='" + deployments_url + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", pushed_at='" + pushed_at + '\'' +
+                ", git_url='" + git_url + '\'' +
+                ", ssh_url='" + ssh_url + '\'' +
+                ", clone_url='" + clone_url + '\'' +
+                ", svn_url='" + svn_url + '\'' +
                 ", homepage=" + homepage +
                 ", size=" + size +
-                ", stargazersCount=" + stargazersCount +
-                ", watchersCount=" + watchersCount +
+                ", stargazers_count=" + stargazers_count +
+                ", watchers_count=" + watchers_count +
                 ", language='" + language + '\'' +
-                ", hasIssues=" + hasIssues +
-                ", hasProject=" + hasProject +
-                ", hasDownloads=" + hasDownloads +
-                ", hasWiki=" + hasWiki +
-                ", hasPages=" + hasPages +
-                ", forksCount=" + forksCount +
-                ", mirrorUrl=" + mirrorUrl +
+                ", has_issues=" + has_issues +
+                ", has_project=" + has_project +
+                ", has_downloads=" + has_downloads +
+                ", has_wiki=" + has_wiki +
+                ", has_pages=" + has_pages +
+                ", forks_count=" + forks_count +
+                ", mirror_url=" + mirror_url +
                 ", archived=" + archived +
                 ", disabled=" + disabled +
-                ", openIssuesCount=" + openIssuesCount +
+                ", open_issues_count=" + open_issues_count +
                 ", license=" + license +
                 ", forks=" + forks +
-                ", openIssues=" + openIssues +
+                ", open_issues=" + open_issues +
                 ", watchers=" + watchers +
-                ", defaultBranch='" + defaultBranch + '\'' +
+                ", default_branch='" + default_branch + '\'' +
                 '}';
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNodeId() {
-        return nodeId;
-    }
-
-    public void setNodeId(String nodeId) {
-        this.nodeId = nodeId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public boolean isPrivateX() {
-        return privateX;
-    }
-
-    public void setPrivateX(boolean privateX) {
-        this.privateX = privateX;
-    }
-
-    public OwnerEntity getOwner() {
-        return owner;
-    }
-
-    public void setOwner(OwnerEntity owner) {
-        this.owner = owner;
-    }
-
-    public String getHtmlUrl() {
-        return htmlUrl;
-    }
-
-    public void setHtmlUrl(String htmlUrl) {
-        this.htmlUrl = htmlUrl;
-    }
-
-    public Object getDescription() {
-        return description;
-    }
-
-    public void setDescription(Object description) {
-        this.description = description;
-    }
-
-    public boolean isFork() {
-        return fork;
-    }
-
-    public void setFork(boolean fork) {
-        this.fork = fork;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getForksUrl() {
-        return forksUrl;
-    }
-
-    public void setForksUrl(String forksUrl) {
-        this.forksUrl = forksUrl;
-    }
-
-    public String getKeysUrl() {
-        return keysUrl;
-    }
-
-    public void setKeysUrl(String keysUrl) {
-        this.keysUrl = keysUrl;
-    }
-
-    public String getCollaboratorsUrl() {
-        return collaboratorsUrl;
-    }
-
-    public void setCollaboratorsUrl(String collaboratorsUrl) {
-        this.collaboratorsUrl = collaboratorsUrl;
-    }
-
-    public String getTeamsUrl() {
-        return teamsUrl;
-    }
-
-    public void setTeamsUrl(String teamsUrl) {
-        this.teamsUrl = teamsUrl;
-    }
-
-    public String getHooksUrl() {
-        return hooksUrl;
-    }
-
-    public void setHooksUrl(String hooksUrl) {
-        this.hooksUrl = hooksUrl;
-    }
-
-    public String getIssueEventsUrl() {
-        return issueEventsUrl;
-    }
-
-    public void setIssueEventsUrl(String issueEventsUrl) {
-        this.issueEventsUrl = issueEventsUrl;
-    }
-
-    public String getEventsUrl() {
-        return eventsUrl;
-    }
-
-    public void setEventsUrl(String eventsUrl) {
-        this.eventsUrl = eventsUrl;
-    }
-
-    public String getAssigneesUrl() {
-        return assigneesUrl;
-    }
-
-    public void setAssigneesUrl(String assigneesUrl) {
-        this.assigneesUrl = assigneesUrl;
-    }
-
-    public String getBranchesUrl() {
-        return branchesUrl;
-    }
-
-    public void setBranchesUrl(String branchesUrl) {
-        this.branchesUrl = branchesUrl;
-    }
-
-    public String getTagsUrl() {
-        return tagsUrl;
-    }
-
-    public void setTagsUrl(String tagsUrl) {
-        this.tagsUrl = tagsUrl;
-    }
-
-    public String getBlobsUrl() {
-        return blobsUrl;
-    }
-
-    public void setBlobsUrl(String blobsUrl) {
-        this.blobsUrl = blobsUrl;
-    }
-
-    public String getGitTagsUrl() {
-        return gitTagsUrl;
-    }
-
-    public void setGitTagsUrl(String gitTagsUrl) {
-        this.gitTagsUrl = gitTagsUrl;
-    }
-
-    public String getGitRefsUrl() {
-        return gitRefsUrl;
-    }
-
-    public void setGitRefsUrl(String gitRefsUrl) {
-        this.gitRefsUrl = gitRefsUrl;
-    }
 }

@@ -45,10 +45,10 @@
 
         <target>
             <!-- 生成的类的目标包（在目标目录中） -->
-            <packageName>com.ecut.generated</packageName>
+            <packageName>com.ecut.test.generated</packageName>
 
             <!-- 生成的类的目标目录 -->
-            <directory>/Users/zhengamy/IdeaProjects/jooq-test/src/main/java</directory>
+            <directory>/Users/zhengamy/IdeaProjects/jooq-test/src/main/java/</directory>
         </target>
     </generator>
 </configuration>

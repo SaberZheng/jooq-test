@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Amy
  * @date 2019-07-04 18:33
- * @description: 作者信息相关操作的controller
+ * @description: 作者信息相关操作的controller，REST ful风格
  */
 @Controller
 @RequestMapping("/test")
